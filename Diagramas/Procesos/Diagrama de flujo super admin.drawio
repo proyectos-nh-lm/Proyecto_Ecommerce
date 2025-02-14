@@ -1,0 +1,78 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.0.11">
+  <diagram name="Página-1" id="S258NoQTD0Kb_s80tl0i">
+    <mxGraphModel dx="518" dy="3089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dskb5pblAboGwMDtcTTj-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-14" target="dskb5pblAboGwMDtcTTj-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="-2240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.596;entryY=-0.021;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-14" target="dskb5pblAboGwMDtcTTj-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1540" y="-2170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1560" y="-2190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-14" value="Inicio" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1205" y="-2280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-18" target="dskb5pblAboGwMDtcTTj-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-18" target="dskb5pblAboGwMDtcTTj-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-18" target="dskb5pblAboGwMDtcTTj-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-18" value="Crud de boutique&lt;br&gt;&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="-2200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-20" target="dskb5pblAboGwMDtcTTj-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-20" value="Crear" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="-2100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-22" target="dskb5pblAboGwMDtcTTj-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-22" value="Elimina" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="-2100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-24" target="dskb5pblAboGwMDtcTTj-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-24" value="Actualizar" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="-2100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dskb5pblAboGwMDtcTTj-26" target="dskb5pblAboGwMDtcTTj-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-26" value="Existe&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="-1940" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-27" value="Modifica&amp;nbsp;&lt;div&gt;formulario&amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="-1800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-29" value="Aplicacion del super admin" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1335" y="-2282" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-33" value="Calificación de boutique&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="-2190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dskb5pblAboGwMDtcTTj-35" value="Reporte de boutique&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1505" y="-2190" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
