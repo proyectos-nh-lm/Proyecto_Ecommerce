@@ -1,0 +1,200 @@
+-- Tabla USUARIOS (sin la columna 'rol')
+CREATE TABLE USUARIOS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    telefono VARCHAR(15),
+    direccion VARCHAR(255),
+    fecha_registro DATE NOT NULL,
+    activo BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+-- Tabla BOUTIQUES
+CREATE TABLE BOUTIQUES (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    direccion VARCHAR(255),
+    telefono VARCHAR(15),
+    imagen_url VARCHAR(255),
+    activo BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+-- Tabla ROLES
+CREATE TABLE ROLES (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- Tabla USUARIO_BOUTIQUE_ROL
+CREATE TABLE USUARIO_BOUTIQUE_ROL (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    boutique_id INT,
+    rol_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id),
+    FOREIGN KEY (boutique_id) REFERENCES BOUTIQUES(id),
+    FOREIGN KEY (rol_id) REFERENCES ROLES(id)
+);
+
+-- Tabla VESTIDOS
+CREATE TABLE VESTIDOS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    marca VARCHAR(255),
+    precio DECIMAL(10, 2) NOT NULL,
+    color VARCHAR(50),
+    talla VARCHAR(10),
+    cantidad INT NOT NULL,
+    imagen_url VARCHAR(255),
+    estado VARCHAR(50),
+    boutique_id INT,
+    FOREIGN KEY (boutique_id) REFERENCES BOUTIQUES(id)
+);
+
+-- Tabla VARIACIONES_VESTIDOS
+CREATE TABLE VARIACIONES_VESTIDOS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    vestido_id INT,
+    color VARCHAR(50),
+    talla VARCHAR(10),
+    stock INT NOT NULL,
+    FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id)
+);
+
+-- Tabla CATEGORIAS
+CREATE TABLE CATEGORIAS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL
+);
+
+-- Tabla VESTIDO_CATEGORIA
+CREATE TABLE VESTIDO_CATEGORIA (
+    vestido_id INT,
+    categoria_id INT,
+    PRIMARY KEY (vestido_id, categoria_id),
+    FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id),
+    FOREIGN KEY (categoria_id) REFERENCES CATEGORIAS(id)
+);
+
+-- Tabla CARRITO_COMPRAS
+CREATE TABLE CARRITO_COMPRAS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    vestido_id INT,
+    talla VARCHAR(10),
+    color VARCHAR(50),
+    cantidad INT NOT NULL,
+    fecha_agregado DATE NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id),
+    FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id)
+);
+
+-- Tabla RESERVAS
+CREATE TABLE RESERVAS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    boutique_id INT,
+    vestido_id INT,
+    fecha_reserva DATE NOT NULL,
+    hora_reserva TIME NOT NULL,
+    estado VARCHAR(50),
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id),
+    FOREIGN KEY (boutique_id) REFERENCES BOUTIQUES(id),
+    FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id)
+);
+
+-- Tabla PAGOS
+CREATE TABLE PAGOS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    monto DECIMAL(10, 2) NOT NULL,
+    metodo_pago VARCHAR(50),
+    estado VARCHAR(50),
+    tipo_transaccion VARCHAR(50),
+    fecha_pago DATE NOT NULL,
+    transaction_id VARCHAR(255) UNIQUE,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id)
+);
+
+-- Tabla GARANTIAS
+CREATE TABLE GARANTIAS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    reserva_id INT,
+    monto DECIMAL(10, 2) NOT NULL,
+    fecha_retenida DATE NOT NULL,
+    reembolsada BOOLEAN NOT NULL DEFAULT FALSE,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id),
+    FOREIGN KEY (reserva_id) REFERENCES RESERVAS(id)
+);
+
+-- Tabla DEVOLUCIONES
+CREATE TABLE DEVOLUCIONES (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    reserva_id INT,
+    fecha_devolucion DATE NOT NULL,
+    estado_vestido VARCHAR(50),
+    observaciones TEXT,
+    garantia_devuelta BOOLEAN NOT NULL DEFAULT FALSE,
+    FOREIGN KEY (reserva_id) REFERENCES RESERVAS(id)
+);
+
+-- Tabla PENALIZACIONES
+CREATE TABLE PENALIZACIONES (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    reserva_id INT,
+    monto DECIMAL(10, 2) NOT NULL,
+    motivo VARCHAR(255),
+    fecha_cobro DATE NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id),
+    FOREIGN KEY (reserva_id) REFERENCES RESERVAS(id)
+);
+
+-- Tabla NOTIFICACIONES
+CREATE TABLE NOTIFICACIONES (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    mensaje TEXT NOT NULL,
+    tipo VARCHAR(50),
+    fecha_envio DATE NOT NULL,
+    leida BOOLEAN NOT NULL DEFAULT FALSE,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id)
+);
+
+-- Tabla RESEÑAS
+CREATE TABLE RESEÑAS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    boutique_id INT,
+    vestido_id INT,
+    calificacion INT NOT NULL,
+    comentario TEXT,
+    fecha DATE NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id),
+    FOREIGN KEY (boutique_id) REFERENCES BOUTIQUES(id),
+    FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id)
+);
+
+-- Tabla FACTURAS
+CREATE TABLE FACTURAS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    total DECIMAL(10, 2) NOT NULL,
+    metodo_pago VARCHAR(50),
+    fecha_factura DATE NOT NULL,
+    estado VARCHAR(50),
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id)
+);
+
+-- Tabla TRANSACCIONES
+CREATE TABLE TRANSACCIONES (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    tipo_transaccion VARCHAR(50),
+    monto DECIMAL(10, 2) NOT NULL,
+    estado VARCHAR(50),
+    fecha DATE NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id)
+);
