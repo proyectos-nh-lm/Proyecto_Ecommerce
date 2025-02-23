@@ -489,3 +489,231 @@ erDiagram
 
 ### ✅ **Integridad Referencial**
 - Las llaves foráneas aseguran la **integridad de datos** en las relaciones.
+
+
+# SEGUNDA VERSION DATABASE 
+erDiagram
+
+    %% ================
+    %%    ENTIDADES
+    %% ================
+
+    USERS {
+        int       id PK
+        string    name
+        string    email
+        string    password
+        string    phone
+        string    address
+        string    role
+        datetime  registered_at
+        bool      is_active
+    }
+
+    BOUTIQUES {
+        int       id PK
+        string    name
+        string    address
+        string    phone
+        string    image_url
+        bool      is_active
+    }
+
+    DRESSES {
+        int       id PK
+        string    name
+        string    brand
+        decimal   base_price
+        string    image_url
+        string    status        "ej: ACTIVO, EN_REPARACION"
+        bool      is_active
+        datetime  created_at
+        datetime  updated_at
+    }
+
+    DRESS_VARIANTS {
+        int       id PK
+        int       dress_id FK
+        string    color
+        string    size
+        int       stock
+        decimal   rental_price
+        bool      is_active
+        datetime  created_at
+        datetime  updated_at
+    }
+
+    INVENTORY {
+        int       id PK
+        int       dress_variant_id FK
+        int       boutique_id FK
+        int       stock
+        string    status           "ej: DISPONIBLE, DAÑADO"
+        datetime  created_at
+        datetime  updated_at
+    }
+
+    CATEGORIES {
+        int       id PK
+        string    name
+    }
+
+    DRESS_CATEGORIES {
+        int       dress_id FK
+        int       category_id FK
+    }
+
+    CART_ITEMS {
+        int       id PK
+        int       user_id FK
+        int       dress_variant_id FK
+        int       quantity
+        datetime  added_at
+    }
+
+    BOOKINGS {
+        int       id PK
+        int       user_id FK
+        int       boutique_id FK
+        date      booking_date
+        time      booking_time
+        string    status       "PENDIENTE, CONFIRMADA, CANCELADA"
+        decimal   total_amount
+        datetime  created_at
+        datetime  updated_at
+    }
+
+    BOOKING_ITEMS {
+        int       id PK
+        int       booking_id FK
+        int       dress_variant_id FK
+        int       quantity
+        decimal   price_at_booking
+        datetime  created_at
+        datetime  updated_at
+    }
+
+    PAYMENTS {
+        int       id PK
+        int       user_id FK
+        decimal   amount
+        string    payment_method
+        string    status         "ej: PAGADO, RECHAZADO"
+        string    transaction_type
+        date      payment_date
+        string    transaction_id
+    }
+
+    DEPOSITS {
+        int       id PK
+        int       user_id FK
+        int       booking_id FK
+        decimal   amount
+        date      held_at
+        bool      refunded
+    }
+
+    RETURNS {
+        int       id PK
+        int       booking_id FK
+        date      return_date
+        string    dress_condition
+        string    notes
+        bool      deposit_returned
+    }
+
+    PENALTIES {
+        int       id PK
+        int       user_id FK
+        int       booking_id FK
+        decimal   amount
+        string    reason
+        date      charged_at
+    }
+
+    NOTIFICATIONS {
+        int       id PK
+        int       user_id FK
+        string    message
+        string    type
+        date      sent_at
+        bool      is_read
+    }
+
+    REVIEWS {
+        int       id PK
+        int       user_id FK
+        int       boutique_id FK
+        int       dress_id FK
+        int       rating
+        string    comment
+        date      review_date
+    }
+
+    INVOICES {
+        int       id PK
+        int       user_id FK
+        decimal   total_amount
+        string    payment_method
+        date      invoice_date
+        string    status
+    }
+
+    INVOICE_ITEMS {
+        int       id PK
+        int       invoice_id FK
+        int       dress_variant_id FK
+        decimal   unit_price
+        int       quantity
+        decimal   subtotal
+    }
+
+    TRANSACTIONS {
+        int       id PK
+        int       user_id FK
+        string    transaction_type
+        decimal   amount
+        string    status
+        date      transaction_date
+    }
+
+    %% ================
+    %%   RELACIONES
+    %% ================
+
+    USERS ||--o{ CART_ITEMS : "has"
+    USERS ||--o{ BOOKINGS : "makes"
+    USERS ||--o{ PAYMENTS : "completes"
+    USERS ||--o{ DEPOSITS : "secures"
+    USERS ||--o{ RETURNS : "initiates"
+    USERS ||--o{ PENALTIES : "receives"
+    USERS ||--o{ NOTIFICATIONS : "gets"
+    USERS ||--o{ REVIEWS : "submits"
+    USERS ||--o{ INVOICES : "generates"
+    USERS ||--o{ TRANSACTIONS : "processes"
+
+    BOUTIQUES ||--o{ BOOKINGS : "hosts"
+    BOUTIQUES ||--o{ INVENTORY : "stores"
+    BOUTIQUES ||--o{ REVIEWS : "receives"
+
+    DRESSES ||--o{ DRESS_VARIANTS : "has"
+    DRESSES ||--o{ DRESS_CATEGORIES : "belongs_to"
+    DRESSES ||--o{ REVIEWS : "can_be_reviewed"
+
+    DRESS_VARIANTS ||--o{ INVENTORY : "stocked_in"
+    DRESS_VARIANTS ||--o{ CART_ITEMS : "in_cart"
+    DRESS_VARIANTS ||--o{ BOOKING_ITEMS : "rented"
+    DRESS_VARIANTS ||--o{ INVOICE_ITEMS : "charged_in"
+
+    CATEGORIES ||--o{ DRESS_CATEGORIES : "groups"
+
+    BOOKINGS ||--o{ BOOKING_ITEMS : "details"
+    BOOKINGS ||--o{ PAYMENTS : "requires"
+    BOOKINGS ||--o{ DEPOSITS : "has"
+    BOOKINGS ||--o{ RETURNS : "generates"
+    BOOKINGS ||--o{ PENALTIES : "can_have"
+
+    PAYMENTS ||--o{ INVOICES : "generates"
+
+    INVOICES ||--o{ INVOICE_ITEMS : "contains"
+
