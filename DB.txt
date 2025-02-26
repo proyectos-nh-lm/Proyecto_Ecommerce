@@ -56,11 +56,21 @@ CREATE TABLE VESTIDOS (
 CREATE TABLE VARIACIONES_VESTIDOS (
     id INT PRIMARY KEY AUTO_INCREMENT,
     vestido_id INT,
-    color VARCHAR(50),
-    talla VARCHAR(10),
+    //color VARCHAR(50),// no seria mejor una tabla de colores y tallas ademas tiene
+    talla VARCHAR(10),// los mismo atributos que la tabla vestidos
     stock INT NOT NULL,
     FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id)
 );
+CREATE TABLE CARACTERISTICAS_VESTIDOS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    vestido_id INT NOT NULL,
+    color VARCHAR(50) NOT NULL,
+    talla VARCHAR(10) NOT NULL CHECK (talla IN ('S', 'M', 'L', 'XL', 'XXL', 'XXXL')),
+    stock INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id),
+    UNIQUE (vestido_id, color, talla) -- Evita duplicados de color y talla para el mismo vestido
+);
+Explicación:
 
 -- Tabla CATEGORIAS
 CREATE TABLE CATEGORIAS (
@@ -89,7 +99,16 @@ CREATE TABLE CARRITO_COMPRAS (
     FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id),
     FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id)
 );
-
+-- Tabla LISTA_DE_DESEOS
+CREATE TABLE LISTA_DE_DESEOS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    vestido_id INT NOT NULL,
+    fecha_agregado DATE NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES USUARIOS(id),
+    FOREIGN KEY (vestido_id) REFERENCES VESTIDOS(id),
+    UNIQUE (usuario_id, vestido_id) -- Evita que un usuario agregue el mismo vestido más de una vez
+);
 -- Tabla RESERVAS
 CREATE TABLE RESERVAS (
     id INT PRIMARY KEY AUTO_INCREMENT,
