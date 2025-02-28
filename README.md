@@ -1,3 +1,3 @@
 # Proyecto_Ecommerce
 
-# <span style= color: red;>PRUEBA</span>
+# <span style="color: red;">Prueba </span>
