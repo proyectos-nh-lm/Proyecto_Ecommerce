@@ -1,10 +1,10 @@
 # Proyecto_Ecommerce
 
-# <span style="color: green;">Bienvenido a mi Proyecto</span>
+# <span>Bienvenido a mi Proyecto</span>
 
 Este es un proyecto de ejemplo donde utilizamos Markdown para crear un archivo README atractivo.
 
-## <span style="color: orange;">Características Principales</span>
+## <span>Características Principales</span>
 
 - Característica 1
 - Característica 2
