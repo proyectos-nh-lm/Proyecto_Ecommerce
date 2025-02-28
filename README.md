@@ -1,14 +1,11 @@
-# Proyecto_Ecommerce
+# <span>Proyecto_Ecommerce</span>
 
-# <span>Bienvenido a mi Proyecto</span>
+# <h2>DE_QUE_TRATA</h2>
 
-Este es un proyecto de ejemplo donde utilizamos Markdown para crear un archivo README atractivo.
+Una boutique de vestidos en renta es un negocio especializado en el alquiler de vestidos elegantes para diversas ocasiones, como bodas, graduaciones, galas, quinceañeras y eventos formales. Estas boutiques ofrecen una amplia variedad de estilos, tallas y marcas, permitiendo a los clientes lucir atuendos sofisticados sin necesidad de comprarlos.
 
-## <span>Características Principales</span>
+# <h2>Características Principales</h2>
 
-- Característica 1
-- Característica 2
-- Característica 3
 
 ### 🟦 Nota Importante
 Asegúrate de seguir las instrucciones cuidadosamente.
