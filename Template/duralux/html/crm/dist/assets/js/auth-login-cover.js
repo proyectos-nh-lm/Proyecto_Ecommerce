@@ -8,5 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function validateLogin() {
 
+    let email = document.getElementById('email').value
+    let password = document.getElementById('password').value
+    let boton = document.getElementById('boton')
 
+    document.addEventListener('')
 }
