@@ -33,9 +33,16 @@
 </head>
 
 <body>
-    <!--! ================================================================ !-->
-    <!--! [Start] Navigation Manu !-->
-    <!--! ================================================================ !-->
+    <style>
+        .nxl-item a.nxl-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    
+        .nxl-item a.nxl-link:hover {
+            background-color: #c6a445 !important;
+            color: #fff !important;
+        }
+    </style>
     <nav class="nxl-navigation">
         <div class="navbar-wrapper">
             <div class="m-header">
@@ -423,12 +430,15 @@
             <!--! [End] Header Right !-->
         </div>
     </header>
-    <!--! ================================================================ !-->
-    <!--! [End] Header !-->
-    <!--! ================================================================ !-->
-    <!--! ================================================================ !-->
-    <!--! [Start] Main Content !-->
-    <!--! ================================================================ !-->
+    <style>
+        .nav-link.note-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .nav-link.note-link:hover {
+            background-color: #c6a445 !important;
+            color: #fff !important;
+        }
+    </style>
     <main class="nxl-container apps-container apps-notes">
         <div class="nxl-content without-header nxl-full-content">
             <!-- [ Main Content ] start -->
@@ -442,7 +452,7 @@
                         </a>
                     </div>
                     <div class="content-sidebar-header">
-                        <a href="javascript:void(0);" class="btn btn-primary w-100" id="add-notes">
+                        <a href="javascript:void(0);" class="btn w-100" id="add-notes" style="background-color: #c6a445; border: 2px solid #c6a445; border-radius: 10px; color: white !important";>
                             <i class="feather-plus me-2"></i>
                             <span>Add Notes</span>
                         </a>
