@@ -5,6 +5,8 @@ const path = require('path');
 // Importar las rutas desde la carpeta "routes"
 const rutas = require('./routes/index');
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Usar las rutas en el servidor
 app.use('/', rutas);
 

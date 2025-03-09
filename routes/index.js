@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 // Ruta principal "/"
 router.get('/', (req, res) => {
-    const filePath = 'Template/duralux/html/crm/dist/templates/auth-404-minimal.html';
-
+    // Proporcionar la ruta absoluta al archivo HTML en la carpeta "public"
+    const filePath = path.join(__dirname, '../public/auth-404-minimal.html');
+    res.sendFile(filePath);
 });
 
 // Ruta "/login"
