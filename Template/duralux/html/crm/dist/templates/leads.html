@@ -36,9 +36,16 @@
 </head>
 
 <body>
-    <!--! ================================================================ !-->
-    <!--! [Start] Navigation Manu !-->
-    <!--! ================================================================ !-->
+    <style>
+        .nxl-item a.nxl-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    
+        .nxl-item a.nxl-link:hover {
+            background-color: #c6a445 !important;
+            color: #fff !important;
+        }
+    </style>
     <nav class="nxl-navigation">
         <div class="navbar-wrapper">
             <div class="m-header">
@@ -455,7 +462,7 @@
                         </div>
                         <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
                             
-                            <a href="leads-create.html" class="btn btn-primary">
+                            <a href="leads-create.html" class="btn" style="background-color: #c6a445; border: 2px solid #c6a445; border-radius: 10px; color: white !important">
                                 <i class="feather-plus me-2"></i>
                                 <span>Create Lead</span>
                             </a>

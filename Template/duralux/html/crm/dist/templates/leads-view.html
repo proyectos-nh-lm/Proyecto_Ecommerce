@@ -35,9 +35,16 @@
 </head>
 
 <body>
-    <!--! ================================================================ !-->
-    <!--! [Start] Navigation Manu !-->
-    <!--! ================================================================ !-->
+    <style>
+        .nxl-item a.nxl-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    
+        .nxl-item a.nxl-link:hover {
+            background-color: #c6a445 !important;
+            color: #fff !important;
+        }
+    </style>
     <nav class="nxl-navigation">
         <div class="navbar-wrapper">
             <div class="m-header">
@@ -479,7 +486,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <a href="javascript:void(0);" class="btn btn-primary successAlertMessage">
+                            <a href="javascript:void(0);" class="btn successAlertMessage" style="background-color: #c6a445; border: 2px solid #c6a445; border-radius: 10px; color: white !important">
                                 <i class="feather-plus me-2"></i>
                                 <span>Make as Customer</span>
                             </a>
@@ -509,7 +516,7 @@
                         </div>
                         <ul class="nav nav-tabs nav-tabs-custom-style" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profileTab">Profile</button>
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profileTab" style="color: #c6a445;">Profile</button>
                             </li>
                         </ul>
                     </div>
