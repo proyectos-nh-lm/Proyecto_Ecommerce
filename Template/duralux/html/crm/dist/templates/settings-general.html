@@ -430,12 +430,19 @@
             <!--! [End] Header Right !-->
         </div>
     </header>
-    <!--! ================================================================ !-->
-    <!--! [End] Header !-->
-    <!--! ================================================================ !-->
-    <!--! ================================================================ !-->
-    <!--! [Start] Main Content !-->
-    <!--! ================================================================ !-->
+    <style>
+        .nav-link:hover {
+            background-color: #c6a445;
+            color:#fff; /* Cambia el color del texto */
+            border-radius: 5px; /* Suaviza los bordes */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+        }
+    
+        .nav-link:hover span,
+        .nav-link:hover i {
+            color:#c6a445;
+        }
+    </style>
     <main class="nxl-container apps-container">
         <div class="nxl-content without-header nxl-full-content">
             <!-- [ Main Content ] start -->
@@ -448,16 +455,6 @@
                             <i class="feather-x"></i>
                         </a>
                     </div>
-                    <style>
-                        #colum {
-                            transition: background-color 0.3s ease, color 0.3s ease;
-                        }
-                    
-                        #colum:hover {
-                            background-color: #c6a445 !important;
-                            color: #fff !important;
-                        }
-                    </style>
                     <div class="content-sidebar-body">
                         <ul id="colum" class="nav flex-column nxl-content-sidebar-item">
                             <li class="nav-item">
