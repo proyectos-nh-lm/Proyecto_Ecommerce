@@ -1,0 +1,20 @@
+{
+  "name": "proyecto_ecommerce",
+  "version": "1.0.0",
+  "description": "# <h2>De_Que_Trata</h2>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proyectos-nh-lm/Proyecto_Ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/proyectos-nh-lm/Proyecto_Ecommerce/issues"
+  },
+  "homepage": "https://github.com/proyectos-nh-lm/Proyecto_Ecommerce#readme"
+}
