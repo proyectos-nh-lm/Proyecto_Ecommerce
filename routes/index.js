@@ -9,11 +9,13 @@ router.get('/', (req, res) => {
     res.status(200).sendFile(filePath);
 });
 
-// Ruta "/login"
 router.get('/login', (req, res) => {
-    res.send('Aquí iría el formulario de login');
+    res.redirect('/')
 });
 
+router.post('/login', (req, res) => {
+    res.send('Aquí iría el formulario de login');
+});
 // Middleware para manejar rutas no encontradas
 router.use((req, res) => {
     const filePath = path.join(__dirname, '../public/auth-404-minimal.html');
