@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/proyectos-nh-lm/Proyecto_Ecommerce/issues"
   },
-  "homepage": "https://github.com/proyectos-nh-lm/Proyecto_Ecommerce#readme"
+  "homepage": "https://github.com/proyectos-nh-lm/Proyecto_Ecommerce#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
