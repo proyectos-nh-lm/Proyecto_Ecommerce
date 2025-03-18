@@ -14,7 +14,9 @@ router.get('/login', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    res.send('Aquí iría el formulario de login');
+    const { email, password } = req.body;
+    console.log(email,password)
+    res.send("datos recibidos con exito")
 });
 // Middleware para manejar rutas no encontradas
 router.use((req, res) => {
