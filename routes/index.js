@@ -4,20 +4,29 @@ const path = require('path');
 
 // Ruta principal "/"
 router.get('/', (req, res) => {
-    // Proporcionar la ruta absoluta al archivo HTML en la carpeta "public"
     const filePath = path.join(__dirname, '../public/auth-login-cover.html');
     res.status(200).sendFile(filePath);
 });
 
+// Redirección a "/"
 router.get('/login', (req, res) => {
-    res.redirect('/')
+    res.redirect('/');
 });
 
+// Ruta POST para recibir el formulario de login
 router.post('/login', (req, res) => {
     const { email, password } = req.body;
-    console.log(email,password)
-    res.send("datos recibidos con exito")
+    console.log(email, password);
+    res.redirect('/home')
 });
+
+// Nueva ruta "/Home" para servir el archivo HTML desde la carpeta Template/duralux
+router.get('/home', (req, res) => {
+    const filePath = path.join(__dirname, '../public/index.html');
+    res.sendFile(filePath);
+});
+
+
 // Middleware para manejar rutas no encontradas
 router.use((req, res) => {
     const filePath = path.join(__dirname, '../public/auth-404-minimal.html');
